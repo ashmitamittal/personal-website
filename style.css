@@ -1,0 +1,999 @@
+/* Resetting some defaults that might cause unexpected behavior */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensuring body takes full height of device */
+body,
+html {
+  height: 100%;
+}
+
+.main_h {
+  position: fixed;
+  top: 0px;
+  max-height: 70px;
+  z-index: 999;
+  width: 100%;
+  padding-top: 17px;
+  background: none;
+  overflow: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  opacity: 0;
+  top: -100px;
+  padding-bottom: 6px;
+  font-family: "Montserrat", sans-serif;
+}
+
+@media only screen and (max-width: 766px) {
+  .main_h {
+    padding-top: 25px;
+  }
+}
+
+.open-nav {
+  max-height: 400px !important;
+}
+
+.open-nav .mobile-toggle {
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+}
+
+.sticky {
+  background-color: rgba(255, 255, 255, 0.93);
+  opacity: 1;
+  top: 0px;
+  border-bottom: 1px solid gainsboro;
+}
+
+.logo {
+  width: 50px;
+  font-size: 25px;
+  color: #8f8f8f;
+  text-transform: uppercase;
+  float: left;
+  display: block;
+  margin-top: 0;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 766px) {
+  .logo {
+    float: none;
+  }
+}
+
+nav {
+  float: right;
+  width: 60%;
+}
+
+@media only screen and (max-width: 766px) {
+  nav {
+    width: 100%;
+  }
+}
+
+nav ul {
+  list-style: none;
+  overflow: hidden;
+  text-align: right;
+  float: right;
+}
+
+@media only screen and (max-width: 766px) {
+  nav ul {
+    padding-top: 10px;
+    margin-bottom: 22px;
+    float: left;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+nav ul li {
+  display: inline-block;
+  margin-left: 15px;
+  line-height: 1.5;
+}
+
+@media only screen and (max-width: 766px) {
+  nav ul li {
+    width: 100%;
+    padding: 7px 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+}
+
+nav ul a {
+  color: #888888;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.mobile-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  right: 22px;
+  top: 0;
+  width: 30px;
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+
+@media only screen and (max-width: 766px) {
+  .mobile-toggle {
+    display: block;
+  }
+}
+
+.mobile-toggle span {
+  width: 30px;
+  height: 4px;
+  margin-bottom: 6px;
+  border-radius: 1000px;
+  background: #8f8f8f;
+  display: block;
+}
+
+nav ul li a {
+  position: relative;
+  padding: 15px 10px;
+  /* Adjust padding here as required */
+  text-decoration: none;
+  color: #888888;
+  /* adjusted to match your other nav styles */
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+nav ul li a:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #333;
+  transition: all 0.5s ease-in-out, opacity 0.5s;
+  /* Adding opacity transition */
+  opacity: 0;
+  /* Start off as invisible */
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #97BDE0;
+}
+
+nav ul li a:hover:after {
+  width: 100%;
+}
+
+
+.row {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 2%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #8f8f8f;
+  background: white;
+  font-family: "Cardo", serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 30px;
+  line-height: 1.8;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+}
+
+p {
+  margin-bottom: 10px;
+  font-size: 17px;
+  color: #45505b;
+  font-family: "Poppins", serif;
+}
+
+.content {
+  padding: 50px 12%;
+}
+
+
+.mouse {
+  display: block;
+  margin: 0 auto;
+  width: 26px;
+  height: 46px;
+  border-radius: 13px;
+  border: 2px solid #e8f380;
+  position: absolute;
+  bottom: 40px;
+  position: absolute;
+  left: 50%;
+  margin-left: -26px;
+}
+
+.mouse span {
+  display: block;
+  margin: 6px auto;
+  width: 2px;
+  height: 2px;
+  border-radius: 4px;
+  background: #e8f380;
+  border: 1px solid transparent;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: scroll;
+  animation-name: scroll;
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+
+.section-title {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 1%;
+  text-align: left;
+}
+
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+
+
+#hero {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.parallax-hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.parallax-hero img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.background-layer,
+.seagull-layer {
+  position: absolute;
+  padding: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  transform: translateY(0);
+}
+
+.foreground-layer {
+  position: absolute;
+  padding: 0;
+  top: 60;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  transform: translateY(2);
+}
+
+.seagull-layer {
+  width: 100%;
+  overflow: visible;
+}
+
+.seagull-layer img {
+  width: auto;
+  height: auto;
+  max-width: 70%;
+  max-height: 50%;
+}
+
+.text-layer {
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  top: 25%;
+  left: 10%;
+}
+
+.text-layer h1 {
+  color: #ececec;
+  margin: 15px 0 0 0;
+  font-size: 50px;
+  letter-spacing: 1.5px;
+  font-family: "Raleway", serif;
+}
+
+.text-layer p {
+  color: #45505b;
+  margin: 15px 0 0 0;
+  line-height: 120%;
+  font-size: 26px;
+  font-family: "Poppins", sans-serif;
+}
+
+#hero .social-links {
+  margin-top: 30px;
+}
+
+#hero .social-links a {
+  font-size: 24px;
+  display: inline-block;
+  color: #45505b;
+  line-height: 1;
+  margin-right: 20px;
+  transition: 0.2s transform, 0.2s box-shadow, 0.2s color;
+}
+
+#hero .social-links a:hover {
+  color: #ececec;
+  transform: scale(1.1);
+  /* Scale effect */
+}
+
+
+#hero:before {
+  content: "";
+  background: rgba(238, 234, 234, 0.8);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Reducing the size of the seagull image on smaller screens */
+@media only screen and (max-width: 766px) {
+  .seagull-layer img {
+    width: 70%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .text-layer h1 {
+    font-size: 34px;
+    /* Further reduced */
+  }
+
+  .text-layer p {
+    font-size: 20px;
+    /* Further reduced */
+    line-height: 140%;
+    /* Increased line height for better spacing */
+  }
+
+  .text-layer {
+    top: 20%;
+    /* Shifts the text up */
+  }
+}
+
+
+/*--------------------------------------------------------------
+  # About
+  --------------------------------------------------------------*/
+.content h3 {
+  font-weight: 700;
+  font-size: 26px;
+  color: #728394;
+  padding-bottom: 3%;
+}
+
+.about h3 {
+  padding-top: 5%;
+}
+
+.about p {
+  color: #45505b;
+  font-family: "Poppins", serif;
+  line-height: 150%;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  /* To align items vertically centered */
+}
+
+.image-wrapper {
+  flex: 1;
+  max-width: 250px;
+  /* or whatever width you want for the image */
+}
+
+.me-img {
+  border-radius: 50%;
+  /* makes the image circular */
+  display: block;
+  /* necessary for margin auto to work */
+  width: 100%;
+  margin: 0 auto;
+  /* center the image on mobile devices */
+}
+
+.text-content {
+  flex: 2;
+  margin-right: 20px;
+  /* added margin to separate text from the image */
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .text-content {
+    order: 2;
+    margin-right: 0;
+    /* remove the margin on mobile devices */
+  }
+
+  .image-wrapper {
+    order: 1;
+    text-align: center;
+    /* centers the image on smaller screens */
+  }
+}
+
+
+
+/* work exp */
+
+.tab-container {
+  max-width: 950px;
+  width: 100%;
+  padding-top: 20px;
+  border-radius: 12px;
+  display: felx;
+  flex-wrap: wrap;
+}
+
+.tab-container p {
+  color: #45505b;
+}
+
+.tab-container .topic {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #728394;
+}
+
+.vertical-tab input {
+  display: none;
+}
+
+.vertical-tab {
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0;
+}
+
+.vertical-tab .list {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 20%;
+  margin-right: 70px;
+  /* Increased the space between list and content */
+  align-self: flex-start;
+  flex-shrink: 0;
+}
+
+.vertical-tab .list label {
+  cursor: pointer;
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #aaa;
+  /* Change color to gray */
+  padding-left: 25px;
+  transition: all 0.5s ease;
+  z-index: 10;
+  position: relative;
+  background-color: transparent;
+  /* set initial background */
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+.vertical-tab .list label:hover {
+  color: #97BDE0;
+}
+
+/* button */
+
+.btn-container {
+  position: relative;
+  width: max-content;
+  display: inline-block;
+  padding-top: 20px;
+}
+
+
+.custom-btn {
+  background-color: #97BDE0;
+  /* Blue background on hover */
+  color: white;
+  /* White text on hover */
+  padding: 10px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  /* Smooth transition for background and color */
+  outline: none;
+  /* Removes the default browser outline on focus */
+  text-decoration: none;
+  font-family: "Poppins", serif;
+  font-size: small;
+  font-weight: 400;
+  border: 2px solid #97BDE0;
+  /* Thick blue border */
+  border-radius: 4px;
+}
+
+.custom-btn:hover {
+  border: 2px solid #97BDE0;
+  /* Thick blue border */
+  background-color: transparent;
+  /* Transparent background */
+  color: #97BDE0;
+  /* Blue text */
+  border-radius: 4px;
+}
+
+
+/* Hover effect */
+.vertical-tab .list label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #97BDE0;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s ease;
+}
+
+.vertical-tab .list label:hover::before {
+  transform: scaleX(1);
+}
+
+#rbc:checked~.list label.rbc,
+#migrations:checked~.list label.migrations,
+#microsoft:checked~.list label.microsoft,
+#nodwin:checked~.list label.nodwin {
+  color: #97BDE0;
+  background-color: rgba(151, 189, 224, 0.1);
+  /* Added light highlight */
+}
+
+/* Adding a line to the left side of the label when selected */
+#rbc:checked~.list label.rbc::before,
+#migrations:checked~.list label.migrations::before,
+#microsoft:checked~.list label.microsoft::before,
+#nodwin:checked~.list label.nodwin::before {
+  transform: scaleX(1);
+}
+
+.vertical-tab .text-content {
+  width: 70%;
+  /* Adjusted the width for more space */
+  height: 280px;
+  overflow-y: auto;
+  padding: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.text-content {
+  margin-bottom: 0;
+}
+
+.vertical-tab .text {
+  display: none;
+}
+
+.vertical-tab .text .title {
+  font-size: 25px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #97BDE0;
+  font-family: "Montserrat", sans-serif;
+  ;
+}
+
+.vertical-tab .text-content .rbc {
+  display: block;
+}
+
+#rbc:checked~.text-content .rbc,
+#migrations:checked~.text-content .migrations,
+#microsoft:checked~.text-content .microsoft,
+#nodwin:checked~.text-content .nodwin {
+  display: block;
+}
+
+#migrations:checked~.text-content .rbc,
+#microsoft:checked~.text-content .rbc,
+#nodwin:checked~.text-content .rbc {
+  display: none;
+}
+
+.vertical-tab .slider {
+  /* ... existing styles ... */
+  height: 50px;
+  /* Matching the reduced height of labels */
+}
+
+/* Update the slider positions accordingly */
+#migrations:checked~.list .slider {
+  top: 50px;
+}
+
+#microsoft:checked~.list .slider {
+  top: 100px;
+}
+
+#nodwin:checked~.list .slider {
+  top: 150px;
+}
+
+
+.experiences .content>p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.exp-other {
+  padding-top: 10px;
+}
+
+
+/* PROJECTS */
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 8px;
+  border: 0.5px solid #45505b;
+  transition: transform 0.3s ease;
+  padding: 20px;
+  cursor: pointer;
+  width: calc(33.33% - 20px);
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 6px #97BDE0;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title {
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.card:hover .card-title {
+  color: #97BDE0;
+}
+
+.card h4 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.attachment-link {
+  color: #45505b;
+  transition: color 0.3s ease;
+}
+
+.attachment-link:hover {
+  color: #97BDE0;
+}
+
+.fas.fa-paperclip {
+  font-size: 16px;
+}
+
+.card-description {
+  margin-top: 15px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+}
+
+.projects .container.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  flex: 1;
+  margin: 15px;
+  box-sizing: border-box;
+  max-width: calc(33.33% - 30px);
+}
+
+.tech-used {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 14px;
+}
+
+@media (max-width: 992px) {
+  .card {
+    max-width: calc(50% - 30px);
+    width: calc(50% - 30px);
+  }
+}
+
+@media only screen and (max-width: 766px) {
+  .card-container .card {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+
+/* CONTACT */
+
+.bye {
+  color: #97BDE0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* .typing-demo {
+  width: 48ch; 
+  animation: typing 5s steps(48), blink .6s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 16px;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+ */
+
+.typing-demo {
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 16px;
+}
+
+.start-typing {
+  animation: typing 5s steps(47), blink .6s step-end infinite alternate;
+  animation-fill-mode: forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 45ch;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+
+.end-links {
+  display: flex;
+  padding-top: 2%;
+  font-size: 22px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.end-links a {
+  margin-right: 20px;
+  /* Adjust this value to increase or decrease spacing */
+  color: #97BDE0;
+  /* Initial color of icons */
+  transition: color 0.3s ease;
+  /* Smooth transition for hover effect */
+}
+
+/* Remove margin from the last link to avoid any extra spacing on the end */
+.end-links a:last-child {
+  margin-right: 0;
+}
+
+/* Hover effect */
+.end-links a:hover {
+  color: #728394;
+}
+
+
+/* footer */
+
+footer {
+  width: 100%;
+  padding: 3% 0;
+  /* combined padding-top and padding-bottom for consistency */
+  margin: 0;
+  /* added this to remove any default margin */
+  position: relative;
+  bottom: 0;
+  line-height: 1.2;
+  /* Adjust line-height if needed */
+}
+
+.footer-content {
+  text-align: center;
+  color: #97BDE0;
+  /* Adjust the color according to your background */
+  font-family: "Poppins", sans-serif;
+  /* Change the font if needed */
+  font-size: 16px;
+  margin: 0;
+  /* added this to remove any default margin */
+}
+
+.heart {
+  color: #97BDE0;
+}
+
+
+/* Change selected text background and text color */
+::selection {
+  background-color: #97BDE0;
+  /* Change this to your desired highlight color */
+  color: white;
+  /* Change this to your desired font color */
+}
+
+/* This is for Firefox, as it uses a different pseudo-element */
+::-moz-selection {
+  background-color: #97BDE0;
+  color: white;
+}
+
+/*--------------------- 
+preloader 
+-----------------------*/
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #fff;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #97BDE0;
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: animate-preloader 1s linear infinite;
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
