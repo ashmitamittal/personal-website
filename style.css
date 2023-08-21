@@ -435,6 +435,37 @@ p {
   }
 }
 
+@media only screen and (max-width: 766px) {
+  
+  .seagull-layer img {
+    width: 70%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .text-layer h1 {
+    font-size: 32px;  /* further reduce font size for mobile */
+  }
+
+  .text-layer p {
+    font-size: 20px;  /* further reduce font size for mobile */
+    line-height: 140%;
+    max-width: 85%;   /* restrict width to avoid overflow */
+    margin: 10px 0;   /* adjust margins */
+  }
+
+  .text-layer {
+    top: 15%;         /* adjust position */
+    left: 5%;         /* give some left padding */
+    right: 5%;        /* give some right padding */
+    max-width: 90%;   /* restrict width */
+  }
+
+}
+
+
 
 /*--------------------------------------------------------------
   # About
@@ -723,6 +754,53 @@ p {
   padding-top: 10px;
 }
 
+@media only screen and (max-width: 766px) {
+  /* Hide slider */
+  .vertical-tab .slider {
+      display: none;
+  }
+
+  /* Modify list labels */
+  .vertical-tab .list label {
+      font-size: 12px;   /* reduce font size */
+      height: 40px;     /* reduce height */
+      line-height: 40px;
+      width: 100%;  /* takes full width */
+      display: block;   /* stack the labels vertically */
+  }
+
+  /* Fix the highlight */
+  #rbc:checked~.list label.rbc,
+  #migrations:checked~.list label.migrations,
+  #microsoft:checked~.list label.microsoft,
+  #nodwin:checked~.list label.nodwin {
+      background-color: rgba(151, 189, 224, 0.3);   /* increase opacity for clearer highlight */
+  }
+
+  /* Adjust width of tabs */
+  .vertical-tab .list {
+      width: 100%;  /* takes full width */
+  }
+  
+  /* Adjust the content to be full width and appear below tabs */
+  .vertical-tab .text-content {
+      width: 100%;  /* takes full width */
+      height: auto; /* auto height */
+      margin-top: 10px; /* space between tabs and content */
+  }
+  
+  /* Hide overflow scroll for text-content */
+  .vertical-tab .text-content {
+      overflow-y: visible;
+  }
+  
+  /* Modify vertical-tab container to adjust the layout */
+  .vertical-tab {
+      display: flex;
+      flex-direction: column;  /* stack children (tabs and content) vertically */
+  }
+}
+
 
 /* PROJECTS */
 
@@ -827,36 +905,9 @@ p {
 
 /* CONTACT */
 
-.bye {
-  color: #97BDE0;
-  font-family: "Poppins", sans-serif;
-}
-
-/* .typing-demo {
-  width: 48ch; 
-  animation: typing 5s steps(48), blink .6s step-end infinite alternate;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid;
-  font-family: 'Source Code Pro', monospace;
-  font-size: 16px;
-}
-
-@keyframes typing {
-  from {
-    width: 0
-  }
-}
-    
-@keyframes blink {
-  50% {
-    border-color: transparent
-  }
-}
- */
 
 .typing-demo {
-  width: 0;
+  width: auto;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;
@@ -865,7 +916,7 @@ p {
 }
 
 .start-typing {
-  animation: typing 5s steps(47), blink .6s step-end infinite alternate;
+  animation: typing 5s steps(46), blink .6s step-end infinite alternate;
   animation-fill-mode: forwards;
 }
 
@@ -875,7 +926,7 @@ p {
   }
 
   to {
-    width: 45ch;
+    width: 46ch;
   }
 }
 
@@ -884,6 +935,22 @@ p {
     border-color: transparent
   }
 }
+
+@media only screen and (max-width: 766px) {
+  .typing-demo {
+    width: auto; /* this will allow the width to be dynamic */
+    white-space: normal; /* this will allow text to wrap to the next line */
+    border-right: none !important;
+    animation: none !important;
+  }
+
+  .start-typing {
+    animation: none;
+    /* width: 100%; */
+  }
+
+}
+
 
 .end-links {
   display: flex;
