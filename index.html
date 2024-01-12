@@ -134,12 +134,16 @@
                 <p>My Co-op work experiences</p>
                 <div class="tab-container">
                     <div class="vertical-tab">
-                        <input type="radio" name="slider" checked id="rbc">
+                        <input type="radio" name="slider" checked id="data2">
+                        <input type="radio" name="slider" id="rbc">
                         <input type="radio" name="slider" id="migrations">
                         <input type="radio" name="slider" id="microsoft">
                         <input type="radio" name="slider" id="nodwin">
 
                         <div class="list">
+                            <label for="data2" class="data2">
+                                <span>Data Squared</span>
+                            </label>
                             <label for="rbc" class="rbc">
                                 <span>RBC</span>
                             </label>
@@ -156,8 +160,16 @@
                         </div>
 
                         <div class="text-content">
+                            <div class="data2 text">
+                                <div class="title"><a href="https://data2.ai/">Software Engineering Co-op @ Data²</a></div>
+                                <p>Sep - Dec 2023</p>
+                                <p> I worked on developing a dynamic evidence and entity loader to enhance 
+                                    knowledge graph creation, integrating cutting-edge technologies like 
+                                    GenerativeAI, LLM, llamaIndex, langchain, AWS Bedrock, and OpenAI. 
+                                </p>
+                            </div>
                             <div class="rbc text">
-                                <div class="title">DevOps Developer Co-op @ RBC</div>
+                                <div class="title"><a href="https://www.rbc.com/about-rbc.html">DevOps Developer Co-op @ RBC</a></div>
                                 <p>Jan - Apr 2023</p>
                                 <p> I refined the deployment processes of the Renovate tool and made notable
                                     contributions to RBC's open-source repository.
@@ -166,7 +178,7 @@
                                 </p>
                             </div>
                             <div class="migrations text">
-                                <div class="title">Software Developer Co-op @ Migrations.ml Inc</div>
+                                <div class="title"><a href="https://migrations.ml/">Software Developer Co-op @ Migrations.ml Inc</a></div>
                                 <p>May - Aug 2022</p>
                                 <p> I developed a real-time credit risk microservice, integrated with a React frontend via gRPC/protobuf. I crafted user-centric credit analytics visualizations, transforming intricate data into insights, and deployed with Kubernetes and Docker.
                                 </p>
@@ -180,7 +192,7 @@
                                     spaces.</p>
                             </div>
                             <div class="nodwin text">
-                                <div class="title">Software Developer Co-op @ Nodwin Gaming</div>
+                                <div class="title"><a href="https://nodwingaming.com/">Software Developer Co-op @ Nodwin Gaming</a></div>
                                 <p>May - Aug 2021</p>
                                 <p>I helped design and implement the DreamHack 2021 website prototype, improving user
                                     onboarding, registration, and more.
@@ -191,13 +203,21 @@
                         </div>
                     </div>
 
-                    <p class="exp-other">In addition to my co-op experiences, I've also engaged in the following
-                        endeavors:</p>
+                    <div class="exp-other-box">
+                        <p class="exp-other">In addition to my co-op experiences, I've also engaged in the following
+                            endeavors: 
 
-                    <p>- Research Assistance @ University of Waterloo (Political Science)<br>
-                        - VP Web Designer @ Hera.co (WUSA Club)<br>
-                        - Web Developer @ Madasky Consulting<br>
-                        - R&D Volunteer @ Kolhapur, India District Council</p>
+                            <ul class="exp-list">
+                                <li>- <strong>Research Assistant @ University of Waterloo (Political Science)</strong> (2022-2023): Assisted in key research projects and qualitative data collection and organization</li>
+                                <li>- <strong>VP Web Designer @ Hera.co (WUSA Club)</strong> (2021-2022): Pioneered and launched the first website</li>
+                                <li>- <strong>Cultural and Educational Exchange @ Cambreur College, Dongen </strong> (2019): India x The Netherlands</li>
+                                <li>- <strong>Web Developer @ Madasky Consulting</strong> (2020) - Developed and mangaged the website</li>
+                                <li>- <strong>R&D Volunteer @ Kolhapur, India District Council</strong> (2018-2019): Positioning of a public school founded in the 1870s</li>
+                            </ul>
+                        </p>
+      
+                    </div>
+                      
                     <div class="btn-container">
                         <a href="./assets/Ashmita Mittal Resume.pdf" class="custom-btn"
                             target="_blank"><i>RESUME</i></a>
@@ -212,58 +232,50 @@
         <section id="projects" class="projects">
             <div class="container content" data-aos="fade-up">
                 <h3>PROJECTS</h3>
-
+                <!-- Card 0 -->
                 <div class="card-container">
                     <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">IntelliLearn</h4>
-                            <a href="https://github.com/ashmitamittal/IntelliLearn" class="attachment-link"
-                                target="_blank">
-                                <i class='bx bx-link-external'></i>
-                            </a>
-                        </div>
-                        <p class="card-description">CS449 HCI. Devised a mobile app solution that addresses real-world
-                            problems related to informal learning.</p>
-                        <p class="tech-used">Figma</p>
+                        <a href="https://github.com/ashmitamittal/IntelliLearn" class="card-link" target="_blank">
+                            <div class="card-header">
+                                <h4 class="card-title">IntelliLearn</h4>
+                                <span class="attachment-icon"><i class='bx bx-link-external'></i></span>
+                            </div>
+                            <p class="card-description">CS449 HCI. Devised a mobile app solution that addresses real-world problems related to informal learning.</p>
+                            <p class="tech-used">Figma</p>
+                          </a>
                     </div>
                     <!-- Card 1 -->
                     <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">BattleSnake Tournament</h4>
-                            <a href="https://replit.com/@AshmitaMittal/battle-snake-python?v=1#README.md"
-                                class="attachment-link" target="_blank">
-                                <i class='bx bx-link-external'></i>
-                            </a>
-                        </div>
-                        <p class="card-description">Applied A* search algorithm for food search and opponent detection,
-                            ensuring optimal decision-making strategy.</p>
-                        <p class="tech-used">Python Flask</p>
+                        <a href="https://replit.com/@AshmitaMittal/battle-snake-python?v=1" class="card-link" target="_blank">
+                            <div class="card-header">
+                                <h4 class="card-title">BattleSnake Tournament</h4>
+                                <span class="attachment-icon"><i class='bx bx-link-external'></i></span>
+                            </div>
+                            <p class="card-description">Applied A* search algorithm for food search and opponent detection, ensuring optimal decision-making strategy.</p>
+                            <p class="tech-used">Python Flask</p>
+                          </a>
                     </div>
                     <!-- Card 2 -->
                     <div class="card">
-                        <div class="card-header">
+                        <a href="https://github.com/ashmitamittal/dreamhack_project" class="card-link" target="_blank">
+                            <div class="card-header">
                             <h4 class="card-title">DreamHack</h4>
-                            <a href="https://github.com/ashmitamittal/dreamhack_project" class="attachment-link"
-                                target="_blank">
-                                <i class='bx bx-link-external'></i>
-                            </a>
-                        </div>
-                        <p class="card-description">A website prototype, integrating esports tournament ticket booking
-                            and registration management.</p>
-                        <p class="tech-used">React Flask Bootstrap API</p>
+                            <span class="attachment-icon"><i class='bx bx-link-external'></i></span>
+                            </div>
+                            <p class="card-description">A website prototype, integrating esports tournament ticket booking and registration management.</p>
+                            <p class="tech-used">React Flask Bootstrap API</p>
+                        </a>
                     </div>
                     <!-- Card 3 -->
                     <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">Extend Your Horizons</h4>
-                            <a href="https://devpost.com/software/extend-your-horizons" class="attachment-link"
-                                target="_blank">
-                                <i class='bx bx-link-external'></i>
-                            </a>
-                        </div>
-                        <p class="card-description">TechNova 2021. Multi-functional chrome extension for productivity
-                            and mental health.</p>
-                        <p class="tech-used">JavaScript HTML CSS</p>
+                        <a href="https://devpost.com/software/extend-your-horizons" class="card-link" target="_blank">
+                            <div class="card-header">
+                                <h4 class="card-title">Extend Your Horizons</h4>
+                                <span class="attachment-icon"><i class='bx bx-link-external'></i></span>
+                            </div>
+                            <p class="card-description">TechNova 2021. Multi-functional chrome extension for productivity and mental health.</p>
+                            <p class="tech-used">JavaScript HTML CSS</p>
+                        </a>
                     </div>
                 </div>
 

@@ -1,3 +1,18 @@
+/*
+COLORS ROUGHLY
+.link {
+  color: #45505b;
+}
+
+.hover {
+  color: #97BDE0;
+}
+  border: 6px solid #97BDE0;
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+
+*/
+
 /* Resetting some defaults that might cause unexpected behavior */
 * {
   margin: 0;
@@ -665,6 +680,9 @@ p {
   transform: scaleX(1);
 }
 
+/* Highlight the selected label */
+/* Change this for other companies */
+#data2:checked~.list label.data2,
 #rbc:checked~.list label.rbc,
 #migrations:checked~.list label.migrations,
 #microsoft:checked~.list label.microsoft,
@@ -675,11 +693,63 @@ p {
 }
 
 /* Adding a line to the left side of the label when selected */
+/* Change this for other companies */
+#data2:checked~.list label.data2::before,
 #rbc:checked~.list label.rbc::before,
 #migrations:checked~.list label.migrations::before,
 #microsoft:checked~.list label.microsoft::before,
 #nodwin:checked~.list label.nodwin::before {
   transform: scaleX(1);
+}
+
+
+/* Change this for other companies */
+.vertical-tab .text-content .data2 {
+  display: block;
+}
+
+/* Hide other text content */
+/* Change this for other companies */
+#data2:checked~.text-content .data2,
+#rbc:checked~.text-content .rbc,
+#migrations:checked~.text-content .migrations,
+#microsoft:checked~.text-content .microsoft,
+#nodwin:checked~.text-content .nodwin {
+  display: block;
+}
+
+/* Hide other text content */
+/* Change this for other companies */
+#rbc:checked~.text-content .data2,
+#migrations:checked~.text-content .data2,
+#microsoft:checked~.text-content .data2,
+#nodwin:checked~.text-content .data2 {
+  display: none;
+}
+
+.vertical-tab .slider {
+  /* ... existing styles ... */
+  height: 50px;
+  /* Matching the reduced height of labels */
+}
+
+/* Update the slider positions accordingly */
+/* Change this for other companies */
+
+#rbc:checked~.list .slider {
+  top: 50px;
+}
+
+#migrations:checked~.list .slider {
+  top: 100px;
+}
+
+#microsoft:checked~.list .slider {
+  top: 150px;
+}
+
+#nodwin:checked~.list .slider {
+  top: 200px;
 }
 
 .vertical-tab .text-content {
@@ -708,40 +778,15 @@ p {
   ;
 }
 
-.vertical-tab .text-content .rbc {
-  display: block;
+.vertical-tab .text .title a {
+  color: #97BDE0; /* blue color, similar to your existing style */
+  text-decoration: none; /* removes underline */
+  transition: color 0.3s ease; /* smooth color transition for hover */
 }
 
-#rbc:checked~.text-content .rbc,
-#migrations:checked~.text-content .migrations,
-#microsoft:checked~.text-content .microsoft,
-#nodwin:checked~.text-content .nodwin {
-  display: block;
-}
-
-#migrations:checked~.text-content .rbc,
-#microsoft:checked~.text-content .rbc,
-#nodwin:checked~.text-content .rbc {
-  display: none;
-}
-
-.vertical-tab .slider {
-  /* ... existing styles ... */
-  height: 50px;
-  /* Matching the reduced height of labels */
-}
-
-/* Update the slider positions accordingly */
-#migrations:checked~.list .slider {
-  top: 50px;
-}
-
-#microsoft:checked~.list .slider {
-  top: 100px;
-}
-
-#nodwin:checked~.list .slider {
-  top: 150px;
+.vertical-tab .text .title a:hover {
+  text-decoration: underline; /* adds underline */
+  transition: color 0.9s ease; /* smooth color transition for hover */
 }
 
 
@@ -770,6 +815,8 @@ p {
   }
 
   /* Fix the highlight */
+  /* Change this for other companies */
+  #data2:checked~.list label.data2,
   #rbc:checked~.list label.rbc,
   #migrations:checked~.list label.migrations,
   #microsoft:checked~.list label.microsoft,
@@ -799,6 +846,63 @@ p {
       display: flex;
       flex-direction: column;  /* stack children (tabs and content) vertically */
   }
+}
+
+.exp-other-box {
+  font-family: "Montserrat", sans-serif;
+  color: #333;
+  padding: 15px 0; /* padding only at the top and bottom */
+  margin-top: 20px;
+  position: relative; /* needed for the pseudo-elements */
+}
+
+.exp-other-box::before,
+.exp-other-box::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 0.2px;
+  background-color: #97BDE0; /* blue line */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* subtle shadow */
+}
+
+.exp-other-box::before {
+  top: 0;
+}
+
+.exp-other-box::after {
+  bottom: 10;
+}
+
+.exp-other-box p {
+  margin-top: 10;
+  margin-bottom: 10px;
+}
+
+/* Other experiences */
+.exp-other-box ul.exp-list {
+  list-style: none; /* removes default list styling */
+  padding-left: 0; /* removes default padding */
+}
+
+.exp-other-box ul.exp-list li {
+  margin-bottom: 12px; /* space between list items */
+  margin-bottom: 10px; /* space between list items */
+  font-size: 16px; /* adjust as per your preference */
+  line-height: 1.5; /* improve readability */
+
+}
+
+.exp-other-box ul.exp-list li strong {
+  font-weight: bold; /* ensures the text is bold */
+  color: #45505b; /* a darker shade of blue for better readability */
+  font-size: 17px; /* slightly larger than the rest of the text */
+}
+
+
+.exp-list {
+  margin-bottom: 20px;
 }
 
 
@@ -849,12 +953,30 @@ p {
   font-size: 18px;
 }
 
-.attachment-link {
-  color: #45505b;
+.attachment-icon {
+  display: inline-block; /* Allows the span to be positioned like an inline element */
+  cursor: pointer; /* Changes the cursor to indicate it's clickable */
+  color: #45505b; /* Initial color for the icon */
   transition: color 0.3s ease;
 }
 
-.attachment-link:hover {
+.attachment-icon:hover {
+  color: #97BDE0;
+}
+
+
+ .card-link {
+  text-decoration: none; /* Removes the underline from links */
+  color: inherit; /* Ensures that the color of text and icons is inherited */
+}
+
+.card-link:hover .card {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 6px #97BDE0;
+}
+
+.card-link:hover .card-title,
+.card-link:hover .attachment-icon {
   color: #97BDE0;
 }
 
