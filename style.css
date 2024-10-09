@@ -682,6 +682,7 @@ p {
 
 /* Highlight the selected label */
 /* Change this for other companies */
+#aws:checked~.list label.aws,
 #data2:checked~.list label.data2,
 #rbc:checked~.list label.rbc,
 #migrations:checked~.list label.migrations,
@@ -694,6 +695,7 @@ p {
 
 /* Adding a line to the left side of the label when selected */
 /* Change this for other companies */
+#aws:checked~.list label.aws::before,
 #data2:checked~.list label.data2::before,
 #rbc:checked~.list label.rbc::before,
 #migrations:checked~.list label.migrations::before,
@@ -704,12 +706,13 @@ p {
 
 
 /* Change this for other companies */
-.vertical-tab .text-content .data2 {
+.vertical-tab .text-content .aws {
   display: block;
 }
 
 /* Hide other text content */
 /* Change this for other companies */
+#aws:checked~.text-content .aws,
 #data2:checked~.text-content .data2,
 #rbc:checked~.text-content .rbc,
 #migrations:checked~.text-content .migrations,
@@ -720,10 +723,11 @@ p {
 
 /* Hide other text content */
 /* Change this for other companies */
-#rbc:checked~.text-content .data2,
-#migrations:checked~.text-content .data2,
-#microsoft:checked~.text-content .data2,
-#nodwin:checked~.text-content .data2 {
+#data2:checked~.text-content .aws,
+#rbc:checked~.text-content .aws,
+#migrations:checked~.text-content .aws,
+#microsoft:checked~.text-content .aws,
+#nodwin:checked~.text-content .aws {
   display: none;
 }
 
@@ -736,20 +740,24 @@ p {
 /* Update the slider positions accordingly */
 /* Change this for other companies */
 
-#rbc:checked~.list .slider {
+#data2:checked~.list .slider {
   top: 50px;
 }
 
-#migrations:checked~.list .slider {
+#rbc:checked~.list .slider {
   top: 100px;
 }
 
-#microsoft:checked~.list .slider {
+#migrations:checked~.list .slider {
   top: 150px;
 }
 
-#nodwin:checked~.list .slider {
+#microsoft:checked~.list .slider {
   top: 200px;
+}
+
+#nodwin:checked~.list .slider {
+  top: 250px;
 }
 
 .vertical-tab .text-content {
@@ -810,12 +818,14 @@ p {
       font-size: 12px;   /* reduce font size */
       height: 40px;     /* reduce height */
       line-height: 40px;
+      
       width: 100%;  /* takes full width */
       display: block;   /* stack the labels vertically */
   }
 
   /* Fix the highlight */
   /* Change this for other companies */
+  #aws:checked~.list label.aws,
   #data2:checked~.list label.data2,
   #rbc:checked~.list label.rbc,
   #migrations:checked~.list label.migrations,
@@ -882,6 +892,7 @@ p {
 
 /* Other experiences */
 .exp-other-box ul.exp-list {
+  font-size: x-small;
   list-style: none; /* removes default list styling */
   padding-left: 0; /* removes default padding */
 }
