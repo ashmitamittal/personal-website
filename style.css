@@ -892,12 +892,12 @@ p {
 
 /* Other experiences */
 .exp-other-box ul.exp-list {
-  font-size: x-small;
+  font-size: 8px;
   list-style: none; /* removes default list styling */
   padding-left: 0; /* removes default padding */
 }
 
-.exp-other-box ul.exp-list li {
+.exp-other-box li {
   margin-bottom: 12px; /* space between list items */
   margin-bottom: 10px; /* space between list items */
   font-size: 16px; /* adjust as per your preference */
