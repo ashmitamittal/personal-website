@@ -921,9 +921,9 @@ p {
 
 .card-container {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  width: 100%;
+  justify-content: space-between;
+  gap: 20px; /* Space between cards */
 }
 
 .card {
@@ -933,9 +933,9 @@ p {
   transition: transform 0.3s ease;
   padding: 20px;
   cursor: pointer;
-  width: calc(33.33% - 20px);
-  position: relative;
-  margin-bottom: 15px;
+  flex: 1 1 calc(33.33% - 20px); /* 3 cards per row, responsive */
+  max-width: calc(33.33% - 20px);
+  margin-bottom: 20px;
 }
 
 .card:hover {
@@ -943,14 +943,19 @@ p {
   box-shadow: 0 4px 6px #97BDE0;
 }
 
+/* Card Header */
 .card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* Card Title */
 .card-title {
   margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
   transition: color 0.3s ease;
 }
 
@@ -958,10 +963,23 @@ p {
   color: #97BDE0;
 }
 
+/* the tools used tech */
 .card h4 {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 18px;
+}
+
+/* Card Description */
+.card-description {
+  margin-top: 15px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+}
+
+.tech-used {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 14px;
 }
 
 .attachment-icon {
@@ -975,8 +993,7 @@ p {
   color: #97BDE0;
 }
 
-
- .card-link {
+.card-link {
   text-decoration: none; /* Removes the underline from links */
   color: inherit; /* Ensures that the color of text and icons is inherited */
 }
@@ -995,46 +1012,20 @@ p {
   font-size: 16px;
 }
 
-.card-description {
-  margin-top: 15px;
-  font-family: "Poppins", sans-serif;
-  font-size: 15px;
-}
-
-.projects .container.content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.card {
-  flex: 1;
-  margin: 15px;
-  box-sizing: border-box;
-  max-width: calc(33.33% - 30px);
-}
-
-.tech-used {
-  font-family: 'Source Code Pro', monospace;
-  font-size: 14px;
-}
-
+/* Responsive adjustments */
 @media (max-width: 992px) {
-  .card {
-    max-width: calc(50% - 30px);
-    width: calc(50% - 30px);
-  }
+    .card {
+        flex: 1 1 calc(50% - 20px); /* 2 cards per row on medium screens */
+        max-width: calc(50% - 20px);
+    }
 }
 
-@media only screen and (max-width: 766px) {
-  .card-container .card {
-    flex: 0 0 100%;
-    max-width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 100%; /* 1 card per row on small screens */
+        max-width: 100%;
+    }
 }
-
 
 /* CONTACT */
 
